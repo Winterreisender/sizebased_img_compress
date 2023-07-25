@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "sizebased-img-compress"
+version = "0.1.0"
+description = ""
+authors = ["NOT_DEFINED <NOT_DEFINED@NOT_DEFINED.net>"]
+readme = "README.md"
+packages = [{include = "sizebased_img_compress"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+opencv-python = "^4.8.0.74"
+mozjpeg-lossless-optimization = "^1.1.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
