@@ -14,6 +14,7 @@ def loss_compress(img :np.ndarray, quality :int) -> bytes:
     assert 5 <= quality <= 100
     assert isinstance(quality, int)
     return cv2.imencode('.jpg', img, [cv2.IMWRITE_JPEG_QUALITY, quality] )[1].tobytes()
+
 # 算法
 # 无损压缩
 # 有损压缩: 经验公式预估初始值 -> 指数调整 -> 线性调整
@@ -22,7 +23,7 @@ def smart_compress(img, target_size :int) -> bytes: # 请保证target_size<origi
     if len(loss_compress(img, 5)) > target_size:
         raise UserWarning('对不起做不到!')
 
-    @lru_cache(64)
+    @lru_cache(16)
     def custom_loss_compress(quality) -> bytes:
         return loss_compress(img, quality)
 
