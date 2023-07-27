@@ -18,19 +18,19 @@ def loss_compress(img :np.ndarray, quality :int) -> bytes:
 # 算法
 # 无损压缩
 # 有损压缩: 经验公式预估初始值 -> 指数调整 -> 线性调整
-def smart_compress(img, target_size :int) -> bytes: # 请保证target_size<origin_size
+def smart_compress(img :np.ndarray, target_size :int) -> (int,bytes): # 请保证target_size<origin_size
 
     if len(loss_compress(img, 5)) > target_size:
         raise UserWarning('对不起做不到!')
 
-    @lru_cache(16)
+    @lru_cache(1)
     def custom_loss_compress(quality) -> bytes:
         return loss_compress(img, quality)
 
     def custom_binary_search(target, left, right):
         middle = (left + right) // 2
 
-        middle_result = loss_compress(img, middle)
+        middle_result = custom_loss_compress(middle)
         middle_size = len(middle_result)
 
         print(f"l={left}, r={right}, m={middle}, m_size={middle_size}")
@@ -38,7 +38,7 @@ def smart_compress(img, target_size :int) -> bytes: # 请保证target_size<origi
         assert left <= right
 
         if(right - left <= 1): # 左右区间差必须在 2 以上, 否则会无限递归
-            return (left, loss_compress(img, left))
+            return (left, custom_loss_compress(left))
         elif(middle_size >= target):
             return custom_binary_search(target, left, middle-1) 
         elif(middle_size < target):
