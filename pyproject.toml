@@ -10,8 +10,14 @@ packages = [{include = "sizebased_img_compress"}]
 python = "^3.9"
 opencv-python = "^4.8.0.74"
 mozjpeg-lossless-optimization = "^1.1.2"
-sv-ttk = "^2.5.5"
-click = "^8.1.6"
+sv-ttk = "^2.5.5" # for gui only
+click = "^8.1.6" # for cli only
+pillow = "^10.0.0"
+
+[[tool.poetry.source]]
+name = "mirrors"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
+priority = "default"
 
 [build-system]
 requires = ["poetry-core"]
