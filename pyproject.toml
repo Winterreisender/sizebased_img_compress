@@ -10,6 +10,8 @@ packages = [{include = "sizebased_img_compress"}]
 python = "^3.9"
 opencv-python = "^4.8.0.74"
 mozjpeg-lossless-optimization = "^1.1.2"
+sv-ttk = "^2.5.5"
+click = "^8.1.6"
 
 [build-system]
 requires = ["poetry-core"]

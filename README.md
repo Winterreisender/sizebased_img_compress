@@ -19,6 +19,7 @@
 - opencv-python
 - mozjpeg
 - mozjpeg_lossless_optimization
+- Photo by [Y K](https://unsplash.com/@yokeboy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/-e6Xu27_T50?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 ## 许可 License
 
