@@ -1,6 +1,6 @@
 import io
 import os
-from sizebased_compress_lib import smart_compress
+from sizebased_compress import smart_compress
 
 import tkinter
 from tkinter.filedialog import askopenfilename, asksaveasfile
