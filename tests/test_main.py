@@ -1,5 +1,5 @@
 import unittest
-from sizebased_compress.smart_compress import smart_compress, loss_compress
+from sizebased_img_compress.smart_compress import smart_compress, loss_compress
 import numpy as np
 from functools import lru_cache
 import os

@@ -1,6 +1,6 @@
 import click
 from pathlib import Path
-import sizebased_compress.smart_compress as smart_compress
+import sizebased_img_compress.smart_compress as smart_compress
 import cv2
 import os
 import logging
