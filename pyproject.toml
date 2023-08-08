@@ -2,17 +2,21 @@
 name = "sizebased-img-compress"
 version = "0.1.0"
 description = ""
-authors = ["NOT_DEFINED <NOT_DEFINED@NOT_DEFINED.net>"]
+authors = ["Winterreiseder <winterreiseder@foxmail.com>"]
 readme = "README.md"
 packages = [{include = "sizebased_img_compress"}]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9,<=3.11"
 opencv-python = "^4.8.0.74"
 mozjpeg-lossless-optimization = "^1.1.2"
 sv-ttk = "^2.5.5" # for gui only
 click = "^8.1.6" # for cli only
 pillow = "^10.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pyinstaller = "^5.13.0"
+
 
 [[tool.poetry.source]]
 name = "mirrors"
