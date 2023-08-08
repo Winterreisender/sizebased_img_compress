@@ -40,5 +40,5 @@ jobs:
     - name: Upload Apps
       uses: actions/upload-artifact@v3
       with:
-        name: app-${{ os }}
+        name: app-${{ matrix.os }}
         path: ./bundle/dist/
